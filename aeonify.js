@@ -7,11 +7,31 @@ function applyOverlay(thumbnailElement, overlayImageUrl, flip) {
   const overlayImage = document.createElement("img");
   overlayImage.src = overlayImageUrl;
   overlayImage.style.position = "absolute";
-  overlayImage.style.top = "0";
-  overlayImage.style.left = "0";
-  overlayImage.style.width = "100%";
-  overlayImage.style.height = "100%";
-  overlayImage.style.zIndex = "0"; // Ensure overlay is on top
+  // overlayImage.style.top = "0";
+  // overlayImage.style.left = "0";
+  // overlayImage.style.width = "100%";
+  // overlayImage.style.height = "100%";
+  // overlayImage.style.zIndex = "0"; // Ensure overlay is on top
+
+  const aspectRatio = thumbnailElement.clientWidth / thumbnailElement.clientHeight;
+  // Calculate the aspect ratio
+
+  // Check if the aspect ratio matches a "131 × 238 px" thumbnail (If it's a short thumbnail)
+  if (Math.abs(aspectRatio - (131 / 238)) < 0.01) {
+    // Apply specific CSS for "131 × 238 px" thumbnails
+    overlayImage.style.top = "123px";
+    overlayImage.style.left = "-3px";
+    overlayImage.style.width = "160%";
+    overlayImage.style.height = "50%";
+    overlayImage.style.zIndex = "0";
+  } else {
+    // Apply default CSS for other thumbnails
+    overlayImage.style.top = "0";
+    overlayImage.style.left = "0";
+    overlayImage.style.width = "100%";
+    overlayImage.style.height = "100%";
+    overlayImage.style.zIndex = "0";
+  }
 
   if (flip) {
     overlayImage.style.transform = "scaleX(-1)"; // Flip the image horizontally
