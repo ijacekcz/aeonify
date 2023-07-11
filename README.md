@@ -7,5 +7,5 @@ Enhance your browsing experience with Aeonifier. Is your browser experience bori
 Compatible with all browsers (Firefox and Chromium based)
 
 Notes:
-* This extension was inspired by [MagicJinn's MrBeastify](https://github.com/MagicJinn/MrBeastify-Youtube).
+* This extension was inspired by [MagicJinn's MrBeastify](https://github.com/MagicJinn/MrBeastify-Youtube) extension.
 * This extension is unofficial and not affiliated with AeonAir or YouTube.
